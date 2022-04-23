@@ -6,9 +6,11 @@
   define('DB_NAME', 'mvcframework');
   
   //APPROOT
+  // /Applications/Xampp/xamppfiles/htdocs/mvcframework/app/
   define('APPROOT', dirname(dirname(__FILE__)));
 
   //URLROOT 
+  //define('URLROOT', 'http://localhost:80/mvcframework');
   define('URLROOT', 'http://localhost:80/mvcframework');
 
   //Sitename
