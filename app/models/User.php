@@ -25,8 +25,21 @@
       } else {
         false;
       }
-      
-      
+    }
+
+    public function login($username, $password) {
+        $this->db->query("SELECT * FROM users where username = :username");
+
+        //bind value
+        $this->db->bind(':username', $username);
+        $row = $this->db->single();
+
+        $hashedPassword = $row->password;
+        if (password_verify($password, $hashedPassword)) {
+            return $row;
+        } else {
+            false;
+        }
     }
     
     //Find user by email, email passed in from controller

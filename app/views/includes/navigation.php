@@ -16,7 +16,11 @@
       <a href="<?= URLROOT; ?>/pages/contact">Contact</a>
     </li>
     <li class="btn-login">
-      <a href="<?= URLROOT; ?>/users/login">Login</a>
+        <?php if(isset($_SESSION['user_id'])) :  ?>
+            <a href="<?= URLROOT; ?>/users/logout">Log Out</a>
+        <?php else : ?>
+            <a href="<?= URLROOT; ?>/users/login">Login</a>
+        <?php endif; ?>
     </li>
   </ul>
 </nav>
